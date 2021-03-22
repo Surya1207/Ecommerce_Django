@@ -1,0 +1,143 @@
+{% extends 'store/base.html' %}
+{% load static %}
+{% block content %}
+<div class="container-fluid card px-1 py-5 mx-auto">
+    <div class="row justify-content-center">
+        <div class="col-xl-7 col-lg-8 col-md-10 col-12 text-center mb-5">
+            <div class="card">
+                <div class="row justify-content-left d-flex">
+                    <div class="col-md-4 d-flex flex-column">
+                        <div class="rating-box">
+                            <h1 class="pt-4">4.0</h1>
+                            <p class="">out of 5</p>
+                        </div>
+                        <div> <span class="fa fa-star star-active mx-1"></span> <span class="fa fa-star star-active mx-1"></span> <span class="fa fa-star star-active mx-1"></span> <span class="fa fa-star star-active mx-1"></span> <span class="fa fa-star star-inactive mx-1"></span> </div>
+                    </div>
+                    <div class="col-md-8">
+                        <div class="rating-bar0 justify-content-center">
+                            <table class="text-left mx-auto">
+                                <tr>
+                                    <td class="rating-label">Excellent</td>
+                                    <td class="rating-bar">
+                                        <div class="bar-container">
+                                            <div class="bar-5"></div>
+                                        </div>
+                                    </td>
+                                    <td class="text-right">123</td>
+                                </tr>
+                                <tr>
+                                    <td class="rating-label">Good</td>
+                                    <td class="rating-bar">
+                                        <div class="bar-container">
+                                            <div class="bar-4"></div>
+                                        </div>
+                                    </td>
+                                    <td class="text-right">23</td>
+                                </tr>
+                                <tr>
+                                    <td class="rating-label">Average</td>
+                                    <td class="rating-bar">
+                                        <div class="bar-container">
+                                            <div class="bar-3"></div>
+                                        </div>
+                                    </td>
+                                    <td class="text-right">10</td>
+                                </tr>
+                                <tr>
+                                    <td class="rating-label">Poor</td>
+                                    <td class="rating-bar">
+                                        <div class="bar-container">
+                                            <div class="bar-2"></div>
+                                        </div>
+                                    </td>
+                                    <td class="text-right">3</td>
+                                </tr>
+                                <tr>
+                                    <td class="rating-label">Terrible</td>
+                                    <td class="rating-bar">
+                                        <div class="bar-container">
+                                            <div class="bar-1"></div>
+                                        </div>
+                                    </td>
+                                    <td class="text-right">0</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+            {% for review in product.reviews.all %}
+                <div class="row d-flex">
+                    <div class=""> <img class="profile-pic" src="{{review.image.url}}"> </div>
+                    <div class="d-flex flex-column">
+                        <h3 class="mt-2 mb-0">{{ comment.name }}</h3>
+                        <div>
+                            <p class="text-left"><span class="text-muted">4.0</span> <span class="fa fa-star star-active ml-3">{{ review.rating }}</span> <span class="fa fa-star star-active"></span> <span class="fa fa-star star-active"></span> <span class="fa fa-star star-active"></span> <span class="fa fa-star star-inactive"></span></p>
+                        </div>
+                    </div>
+                    <div class="ml-auto">
+                        <p class="text-muted pt-5 pt-sm-3">{{ review.created_at }}</p>
+                    </div>
+                </div>
+                <br>
+                <div class="row text-left">
+                    <h4 class="blue-text mt-3">"{{ review.comment }}"</h4>
+                    <p class="content">{{ review.comment }}</p>
+                </div>
+                <div class="row text-left"> <img class="pic" src="{{review.image.url}}"> <img class="pic" src="https://i.imgur.com/SjBwAgs.jpg"> <img class="pic" src="https://i.imgur.com/IgHpsBh.jpg"> </div>
+                <div class="row text-left mt-4">
+                    <div class="like mr-3 vote"> <img src="https://i.imgur.com/mHSQOaX.png"><span class="blue-text pl-2">20</span> </div>
+                    <div class="unlike vote"> <img src="https://i.imgur.com/bFBO3J7.png"><span class="text-muted pl-2">4</span> </div>
+                </div>
+                {% empty %}
+                <div class="notification">No Reviews Yet....</div>
+             {% endfor %}
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+    <div class="card">
+    <div class="row">
+        <div class="col-2"> <img src="https://i.imgur.com/xELPaag.jpg" width="70" class="rounded-circle mt-2"> </div>
+        <div class="col-10">
+            <div class="comment-box ml-2">
+                <h4>Add a comment</h4>
+                {% if request.user.is_authenticated %}
+                <form method="post" action="">
+                    {% csrf_token %}
+                <div class="rating">
+                    <input type="radio" name="rating" value="5" id="5"><label for="5">☆</label>
+                    <input type="radio" name="rating" value="4" id="4"><label for="4">☆</label>
+                    <input type="radio" name="rating" value="3" id="3"><label for="3">☆</label>
+                    <input type="radio" name="rating" value="2" id="2"><label for="2">☆</label>
+                    <input type="radio" name="rating" value="1" id="1"><label for="1">☆</label>
+                </div>
+                <div class="comment-area"> <textarea class="form-control" placeholder="Your Subject" name="subject" rows="0"></textarea> </div>
+                <div class="comment-area"> <textarea class="form-control" placeholder="what is your view?" name="comment" rows="4"></textarea> </div>
+                <div class="comment-btns mt-2">
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="pull-left"> <button class="btn btn-success btn-sm">Cancel</button> </div>
+                        </div>
+
+                        <div class="col-6">
+                            {% if user.id is not None %}
+                            <div class="pull-right"> <button class="btn btn-success send btn-sm">Send <i class="fa fa-long-arrow-right ml-1"></i></button> </div>
+                              {% else %}
+                            You Must be Logged in to post a comment
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+                </form>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    </div>
+{% endblock content %}

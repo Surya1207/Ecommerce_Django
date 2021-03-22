@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Obaju</title>
+    <style type="text/css">
+        html {
+            width: 100%;
+            -webkit-text-size-adjust: 100%;
+            -webkit-background-size: 100%;
+        }
+
+        body {
+            width: 100%;
+            font-family: Arial;
+            font-size: 14px;
+            background-color: white;
+            color: #333333;
+        }
+
+        a {
+            color: #f1f1f1;
+        }
+    </style>
+</head>
+<body>
+        <table width="100%" cellspacing="0" cellpadding="0">
+            <tr>
+                <td>
+                    <div style="text-align: center;">
+                        <h1>Obaju - Order confirmation</h1>
+                    </div>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <p>Nice! Your order is successful and will be sent shortly!</p>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    {% for item in order.orderitem_set.all %}
+                        <p><strong>{{ item.product.name }}</strong> - Quantity: {{ item.quantity }} - Price: ${{ item.product.price }}</p>
+                    {% endfor %}
+                </td>
+            </tr>
+        </table>
+    </body>
+</html>

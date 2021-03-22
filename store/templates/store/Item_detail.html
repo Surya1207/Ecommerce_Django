@@ -1,0 +1,403 @@
+{% extends 'store/base.html' %}
+{% load static %}
+{% block content %}
+<div id="all">
+      <div id="content">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-12">
+              <!-- breadcrumb-->
+              <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                  <li class="breadcrumb-item"><a href="{% url 'store' %}">Home</a></li>
+                    {% if product.category.parent %}
+                        <li class="breadcrumb-item active"><a href="{% url 'category_detail' product.category.parent.slug %}">{{ product.category.title }}</a></li>
+                    {% endif %}
+                        <li aria-current="page" class="breadcrumb-item active"><a href="{% url 'detail' product.category.slug product.slug %}"> {{ product.name }}</a></li>
+                </ol>
+              </nav>
+            </div>
+            <div class="col-lg-3 order-2 order-lg-1">
+              <!--
+              *** MENUS AND FILTERS ***
+              _________________________________________________________
+              -->
+              <div class="card sidebar-menu mb-4">
+                <div class="card-header">
+                  <h3 class="h4 card-title">Categories</h3>
+                </div>
+                <div class="card-body">
+                  <ul class="nav nav-pills flex-column category-menu">
+                  {% for category in menu_categories %}
+                    <li><a href="{% url 'category_detail' category.slug %}" class="nav-link active">{{ category.title }}<span class="badge badge-secondary">42</span></a>
+                      <ul class="list-unstyled">
+                         {% for subcategory in category.children.all %}
+                        <li><a href="{% url 'category_detail' subcategory.slug %}" class="nav-link">{{ subcategory.title }}</a></li>
+                         {% endfor %}
+                  {% endfor %}
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="card sidebar-menu mb-4">
+                <div class="card-header">
+                  <h3 class="h4 card-title">Brands <a href="#" class="btn btn-sm btn-danger pull-right"><i class="fa fa-times-circle"></i> Clear</a></h3>
+                </div>
+                <div class="card-body">
+                  <form>
+                    <div class="form-group">
+                      <div class="checkbox">
+                        <label>
+                          <input type="checkbox"> Armani  (10)
+                        </label>
+                      </div>
+                      <div class="checkbox">
+                        <label>
+                          <input type="checkbox"> Versace  (12)
+                        </label>
+                      </div>
+                      <div class="checkbox">
+                        <label>
+                          <input type="checkbox"> Carlo Bruni  (15)
+                        </label>
+                      </div>
+                      <div class="checkbox">
+                        <label>
+                          <input type="checkbox"> Jack Honey  (14)
+                        </label>
+                      </div>
+                    </div>
+                    <button class="btn btn-default btn-sm btn-primary"><i class="fa fa-pencil"></i> Apply</button>
+                  </form>
+                </div>
+              </div>
+              <div class="card sidebar-menu mb-4">
+                <div class="card-header">
+                  <h3 class="h4 card-title">Colours <a href="#" class="btn btn-sm btn-danger pull-right"><i class="fa fa-times-circle"></i> Clear</a></h3>
+                </div>
+                <div class="card-body">
+                  <form>
+                    <div class="form-group">
+                      <div class="checkbox">
+                        <label>
+                          <input type="checkbox"><span class="colour white"></span> White (14)
+                        </label>
+                      </div>
+                      <div class="checkbox">
+                        <label>
+                          <input type="checkbox"><span class="colour blue"></span> Blue (10)
+                        </label>
+                      </div>
+                      <div class="checkbox">
+                        <label>
+                          <input type="checkbox"><span class="colour green"></span>  Green (20)
+                        </label>
+                      </div>
+                      <div class="checkbox">
+                        <label>
+                          <input type="checkbox"><span class="colour yellow"></span>  Yellow (13)
+                        </label>
+                      </div>
+                      <div class="checkbox">
+                        <label>
+                          <input type="checkbox"><span class="colour red"></span>  Red (10)
+                        </label>
+                      </div>
+                    </div>
+                    <button class="btn btn-default btn-sm btn-primary"><i class="fa fa-pencil"></i> Apply</button>
+                  </form>
+                </div>
+              </div>
+              <!-- *** MENUS AND FILTERS END ***-->
+              <div class="banner"><a href="#"><img src="{{ product.imageURL }}" alt="sales 2014" class="img-fluid"></a></div>
+            </div>
+            <div class="col-lg-9 order-1 order-lg-2">
+              <div id="productMain" class="row">
+                <div class="col-md-6">
+                  <div data-slider-id="1" class="owl-carousel shop-detail-carousel">
+                    <div class="item"> <img src="{{ product.imageURL }}" alt="" class="img-fluid"></div>
+                    <div class="item"> <img src="{{ product.imageURL }}" alt="" class="img-fluid"></div>
+                    <div class="item"> <img src="{{ product.imageURL }}" alt="" class="img-fluid"></div>
+                  </div>
+                    <br>
+                    <div style="text-align:left">
+                        {% for pro in products %}
+                        <h4>Available colors:</h4>
+                           <a href=""><span class="{{ product.color }}" style="background-color: #0f6674"></span></a>
+                           <span class="{{ product.color }}"></span>
+                           <span class="{{ product.color }}"></span>
+                           <span class="{{ product.color }}"></span>
+                        {% endfor %}
+                    </div>
+
+                    <div style="text-align:left">
+                        <h4>Available size:</h4>
+  <a href=""><span class="dot"></span></a>
+  <span class="dot"></span>
+  <span class="dot"></span>
+  <span class="dot"></span>
+</div>
+
+                </div>
+                <div class="col-md-6">
+                  <div class="box">
+                      <form method="post">
+                          {% csrf_token %}
+                    <h1 class="text-center">{{ product.name }}</h1>
+                    <p class="goToDescription"><a href="#details" class="scroll-to">Scroll to product details, material &amp; care and sizing</a></p>
+                    <p class="price">{{ product.price }}</p>
+                          <p class="text-center buttons"><button data-product="{{product.id}}" data-action="add" class="btn btn-primary add-btn update-cart"><i class="fa fa-shopping-cart"></i> Add to cart</button><a href="{% url 'wishlist' product.id %}" class="btn btn-outline-primary"><i class="fa fa-heart"></i> Add to wishlist</a></p>
+                          <p class="text-center"><a class="btn btn-primary" href=""><i class="fa fa-shopping-cart"></i>View Ratings & Reviews</a></p>
+                      </form>
+                  </div>
+
+
+
+
+                  <div data-slider-id="1" class="owl-thumbs">
+                    <button class="owl-thumb-item"><img src="{{ product.imageURL }}" alt="" class="img-fluid"></button>
+                    <button class="owl-thumb-item"><img src="{{ product.imageURL }}" alt="" class="img-fluid"></button>
+                    <button class="owl-thumb-item"><img src="{{ product.imageURL }}" alt="" class="img-fluid"></button>
+                  </div>
+
+                </div>
+              </div>
+
+              <div id="details" class="box">
+                <p></p>
+                <h4>{{ product.name }}</h4>
+                <p>{{ product.description }}</p>
+                <h4>Material &amp; care</h4>
+                <ul>
+                  <li>Polyester</li>
+                  <li>Machine wash</li>
+                </ul>
+                <h4>Size &amp; Fit</h4>
+                <ul>
+                  <li>Regular fit</li>
+                  <li>The model (height 5'8" and chest 33") is wearing a size S</li>
+                </ul>
+                <blockquote>
+                  <p><em>Define style this season with Armani's new range of trendy tops, crafted with intricate details. Create a chic statement look by teaming this lace number with skinny jeans and pumps.</em></p>
+                </blockquote>
+                <hr>
+                <div class="social">
+                  <h4>Show it to your friends</h4>
+                  <p><a href="#" class="external facebook"><i class="fa fa-facebook"></i></a><a href="#" class="external gplus"><i class="fa fa-google-plus"></i></a><a href="#" class="external twitter"><i class="fa fa-twitter"></i></a><a href="#" class="email"><i class="fa fa-envelope"></i></a></p>
+                </div>
+              </div>
+              <div class="row same-height-row">
+                <div class="col-md-3 col-sm-6">
+                  <div class="box same-height">
+                    <h3>You may also like these products</h3>
+                  </div>
+                </div>
+              {% for related_product in related_products %}
+                <div class="col-md-3 col-sm-6">
+
+                    <div class="product same-height">
+
+                    <div class="flip-container">
+
+                      <div class="flipper">
+                        <div class="front"><a href="" class="invisible"><img src="{{related_product.imageURL}}" alt="" class="img-fluid"></a></div>
+                        <div class="back"><a href=""><img src="{{related_product.imageURL}}" alt="" class="img-fluid"></a></div>
+                      </div>
+                    </div><a href=""><img src="{{related_product.imageURL}}" alt="" class="img-fluid"></a>
+                    <div class="text">
+                      <h3><a href="">{{ related_product.name }}</a></h3>
+                      <p class="price">
+                        {{ related_product.price }}
+                      </p>
+                      <p class="buttons"><a href="{% url 'detail' related_product.category.slug product.slug %}" class="btn btn-outline-secondary">View detail</a><button data-product="{{product.id}}" data-action="add" class="btn btn-primary add-btn update-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button></p>
+                    </div>
+                    <!-- /.text-->
+                  </div>
+                  </div>
+              {% endfor %}
+
+                  <!-- /.product-->
+                </div>
+                  <!-- /.product-->
+                </div>
+              </div>
+              <div class="row same-height-row">
+                <div class="col-md-3 col-sm-6">
+                  <div class="box same-height">
+                    <h3>Products viewed recently</h3>
+                  </div>
+                </div>
+              {% for recently_viewed_product in recently_viewed_products %}
+                <div class="col-md-3 col-sm-6">
+                  <div class="product same-height">
+                    <div class="flip-container">
+                      <div class="flipper">
+                        <div class="front"><a href=""><img src="{{ recently_viewed_product.imageURL }}" alt="" class="img-fluid"></a></div>
+                        <div class="back"><a href=""><img src="{{ recently_viewed_product.imageURL }}" alt="" class="img-fluid"></a></div>
+                      </div>
+                    </div><a href="" class="invisible"><img src="{{ recently_viewed_product.imageURL }}" alt="" class="img-fluid"></a>
+                    <div class="text">
+                      <h3>{{ recently_viewed_product.name }}</h3>
+                      <p class="price">{{ recently_viewed_product.price }}</p>
+                        <p class="buttons"><a href="{% url 'detail' recently_viewed_product.category.slug product.slug %}" class="btn btn-outline-secondary">View detail</a><button data-product="{{product.id}}" data-action="add" class="btn btn-primary add-btn update-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button></p>
+                    </div>
+                  </div>
+                  <!-- /.product-->
+                </div>
+              {% endfor %}
+              
+            </div>
+            <!-- /.col-md-9-->
+          </div>
+        </div>
+      </div>
+    </div>
+
+<div class="container-fluid card px-1 py-5 mx-auto">
+    <div class="row justify-content-center">
+        <div class="col-xl-7 col-lg-8 col-md-10 col-12 text-center mb-5">
+            <div class="card">
+                <div class="row justify-content-left d-flex">
+                    <div class="col-md-4 d-flex flex-column">
+                        <div class="rating-box">
+                            <h1 class="pt-4">4.0</h1>
+                            <p class="">out of 5</p>
+                        </div>
+                        <div> <span class="fa fa-star star-active mx-1"></span> <span class="fa fa-star star-active mx-1"></span> <span class="fa fa-star star-active mx-1"></span> <span class="fa fa-star star-active mx-1"></span> <span class="fa fa-star star-inactive mx-1"></span> </div>
+                    </div>
+                    <div class="col-md-8">
+                        <div class="rating-bar0 justify-content-center">
+                            <table class="text-left mx-auto">
+                                <tr>
+                                    <td class="rating-label">Excellent</td>
+                                    <td class="rating-bar">
+                                        <div class="bar-container">
+                                            <div class="bar-5"></div>
+                                        </div>
+                                    </td>
+                                    <td class="text-right">123</td>
+                                </tr>
+                                <tr>
+                                    <td class="rating-label">Good</td>
+                                    <td class="rating-bar">
+                                        <div class="bar-container">
+                                            <div class="bar-4"></div>
+                                        </div>
+                                    </td>
+                                    <td class="text-right">23</td>
+                                </tr>
+                                <tr>
+                                    <td class="rating-label">Average</td>
+                                    <td class="rating-bar">
+                                        <div class="bar-container">
+                                            <div class="bar-3"></div>
+                                        </div>
+                                    </td>
+                                    <td class="text-right">10</td>
+                                </tr>
+                                <tr>
+                                    <td class="rating-label">Poor</td>
+                                    <td class="rating-bar">
+                                        <div class="bar-container">
+                                            <div class="bar-2"></div>
+                                        </div>
+                                    </td>
+                                    <td class="text-right">3</td>
+                                </tr>
+                                <tr>
+                                    <td class="rating-label">Terrible</td>
+                                    <td class="rating-bar">
+                                        <div class="bar-container">
+                                            <div class="bar-1"></div>
+                                        </div>
+                                    </td>
+                                    <td class="text-right">0</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+            {% for item in product.review_set.all %}
+                <div class="row d-flex">
+                    <div class=""> <img class="profile-pic" src="{{review.image.url}}"> </div>
+                    <div class="d-flex flex-column">
+                        <h3 class="mt-2 mb-0">{{ item.user }}</h3>
+                        <div>
+                            <p class="text-left">
+                                <span class="text-muted">4.0</span> <span class="fa fa-star star-active ml-3">{% if item.rating < 1 %}-o empty{% endif %}</span> <span class="fa fa-star star-active">{% if rs.rate < 1 %}-o empty{% endif %}</span> <span class="fa fa-star star-active">{% if rs.rate < 1 %}-o empty{% endif %}</span> <span class="fa fa-star star-active">{% if rs.rate < 1 %}-o empty{% endif %}</span> <span class="fa fa-star star-inactive">{% if rs.rate < 1 %}-o empty{% endif %}</span></p>
+                        </div>
+                    </div>
+                    <div class="ml-auto">
+                        <p class="text-muted pt-5 pt-sm-3">{{ item.created_at }}</p>
+                    </div>
+                </div>
+                <br>
+                <div class="row text-left">
+                    <h4 class="blue-text mt-3"></h4>
+                    <p class="content">{{ item.comment }}</p>
+                </div>
+                <div class="row text-left"> <img class="pic" src="{{item.image.url}}"> <img class="pic" src="https://i.imgur.com/SjBwAgs.jpg"> <img class="pic" src="https://i.imgur.com/IgHpsBh.jpg"> </div>
+                <div class="row text-left mt-4">
+                    <div class="like mr-3 vote"> <img src="{{item.image.url}}"><span class="blue-text pl-2">20</span> </div>
+                    <div class="unlike vote"> <img src="{{item.image.url}}"><span class="text-muted pl-2">4</span> </div>
+                </div>
+            {% empty %}
+                <div class="notification">No Reviews Yet....</div>
+            {% endfor %}
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+    <div class="card">
+    <div class="row">
+        <div class="col-2"> <img src="https://i.imgur.com/xELPaag.jpg" width="70" class="rounded-circle mt-2"> </div>
+        <div class="col-10">
+            <div class="comment-box ml-2">
+                <h4>Add a comment</h4>
+
+                <form method="post" action=".">
+                    {% csrf_token %}
+                <div class="rating">
+                    <input type="radio" name="rating" value="5" id="5"><label for="5">☆</label>
+                    <input type="radio" name="rating" value="4" id="4"><label for="4">☆</label>
+                    <input type="radio" name="rating" value="3" id="3"><label for="3">☆</label>
+                    <input type="radio" name="rating" value="2" id="2"><label for="2">☆</label>
+                    <input type="radio" name="rating" value="1" id="1"><label for="1">☆</label>
+                </div>
+
+                    
+                <div class="comment-area"> <textarea class="form-control" placeholder="Your Subject" name="subject" rows="0"></textarea> </div>
+                <div class="comment-area"> <textarea class="form-control" placeholder="what is your view?" name="comment" rows="4"></textarea> </div>
+                <div class="comment-btns mt-2">
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="pull-left"> <button class="btn btn-success btn-sm">Cancel</button> </div>
+                        </div>
+
+                        <div class="col-6">
+                            <div class="pull-right"> <button class="btn btn-success send btn-sm">Send <i class="fa fa-long-arrow-right ml-1"></i></button> </div>
+
+                            You Must be Logged in to post a comment
+
+                        </div>
+                    </div>
+                </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+    </div>
+
+
+
+
+
+{% endblock content %}
