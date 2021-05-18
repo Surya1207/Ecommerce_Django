@@ -1,7 +1,58 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1223bf51-20d5-4eed-b62c-87485cb2bee3" name="Default Changelist" comment="" />
+    <list default="true" id="1223bf51-20d5-4eed-b62c-87485cb2bee3" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/admin.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/apps.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/forms.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/migrations/0001_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/migrations/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/models.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/signals.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/templates/accounts/base.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/templates/accounts/log_reg.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/templates/accounts/logggin.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/templates/accounts/login.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/templates/accounts/profile.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/templates/accounts/register.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/tests.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/views.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cart/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/cart/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cart/migrations/0001_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cart/migrations/0002_auto_20210319_1751.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cart/migrations/0003_auto_20210319_1758.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cart/migrations/0004_remove_order_coupon.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cart/migrations/0005_order_coupon.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cart/migrations/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cart/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/cart/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cart/templates/cart/cartview.html" beforeDir="false" afterPath="$PROJECT_DIR$/cart/templates/cart/cartview.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cart/templates/cart/checkout.html" beforeDir="false" afterPath="$PROJECT_DIR$/cart/templates/cart/checkout.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cart/templates/cart/customer_orders.html" beforeDir="false" afterPath="$PROJECT_DIR$/cart/templates/cart/customer_orders.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cart/templates/cart/delivery_method.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cart/templates/cart/order_review.html" beforeDir="false" afterPath="$PROJECT_DIR$/cart/templates/cart/order_review.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cart/templates/cart/product_status.html" beforeDir="false" afterPath="$PROJECT_DIR$/cart/templates/cart/product_status.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cart/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/cart/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/grocery_shop/email_info.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/grocery_shop/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/grocery_shop/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/grocery_shop/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/grocery_shop/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/store/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/store/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/migrations/0001_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/migrations/0002_auto_20210321_1516.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/migrations/0003_review_active.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/migrations/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/store/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/templates/store/Item_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/store/templates/store/Item_detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/templates/store/Item_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/store/templates/store/Item_list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/templates/store/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/store/templates/store/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/templates/store/category_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/store/templates/store/category_detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/templates/store/store.html" beforeDir="false" afterPath="$PROJECT_DIR$/store/templates/store/store.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/store/views.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -32,18 +83,19 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Grocery" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/cart" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\ASUS2020\projects\grocery_shop\cart" />
-      <recent name="C:\Users\ASUS2020\projects\grocery_shop\Cart" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\ASUS2020\projects\grocery_shop\cart\templates\cart" />
       <recent name="C:\Users\ASUS2020\projects\grocery_shop\store\templates\store" />
       <recent name="C:\Users\ASUS2020\projects\grocery_shop\cart" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\ASUS2020\projects\grocery_shop\cart" />
+      <recent name="C:\Users\ASUS2020\projects\grocery_shop\checkout" />
+      <recent name="C:\Users\ASUS2020\projects\grocery_shop\Cart" />
     </key>
   </component>
   <component name="RunManager">
@@ -553,6 +605,153 @@
       <workItem from="1616402100177" duration="1752000" />
       <workItem from="1616404247240" duration="1215000" />
       <workItem from="1616406168263" duration="1183000" />
+      <workItem from="1616412159214" duration="908000" />
+      <workItem from="1616413973846" duration="160000" />
+      <workItem from="1616662247910" duration="28000" />
+      <workItem from="1616666547966" duration="658000" />
+      <workItem from="1616667279005" duration="1320000" />
+      <workItem from="1616763205661" duration="579000" />
+      <workItem from="1616919152575" duration="1712000" />
+      <workItem from="1616920980627" duration="713000" />
+      <workItem from="1616922797632" duration="1096000" />
+      <workItem from="1616924622529" duration="1753000" />
+      <workItem from="1616926445249" duration="1761000" />
+      <workItem from="1616928275815" duration="591000" />
+      <workItem from="1616930341366" duration="339000" />
+      <workItem from="1616931679241" duration="719000" />
+      <workItem from="1616934051607" duration="1206000" />
+      <workItem from="1617003075428" duration="1174000" />
+      <workItem from="1617004892521" duration="2000" />
+      <workItem from="1617012772327" duration="875000" />
+      <workItem from="1617013701141" duration="682000" />
+      <workItem from="1617015526505" duration="585000" />
+      <workItem from="1617017453157" duration="593000" />
+      <workItem from="1617019277813" duration="1300000" />
+      <workItem from="1617023514231" duration="591000" />
+      <workItem from="1617090240650" duration="1174000" />
+      <workItem from="1617092056546" duration="1158000" />
+      <workItem from="1617093942194" duration="666000" />
+      <workItem from="1617095764807" duration="605000" />
+      <workItem from="1617097626717" duration="566000" />
+      <workItem from="1617431428739" duration="1276000" />
+      <workItem from="1617432781460" duration="1610000" />
+      <workItem from="1617434730588" duration="584000" />
+      <workItem from="1617438516010" duration="589000" />
+      <workItem from="1617440345287" duration="875000" />
+      <workItem from="1617442224537" duration="590000" />
+      <workItem from="1617444443362" duration="1051000" />
+      <workItem from="1617446269268" duration="1282000" />
+      <workItem from="1617448089471" duration="623000" />
+      <workItem from="1617601222678" duration="85000" />
+      <workItem from="1617874663455" duration="153000" />
+      <workItem from="1619417577536" duration="720000" />
+      <workItem from="1619419389748" duration="1400000" />
+      <workItem from="1619421231148" duration="1200000" />
+      <workItem from="1619502929646" duration="641000" />
+      <workItem from="1619778378281" duration="341000" />
+      <workItem from="1619779244476" duration="592000" />
+      <workItem from="1619783431069" duration="1048000" />
+      <workItem from="1619785433836" duration="172000" />
+      <workItem from="1619851397207" duration="594000" />
+      <workItem from="1619852305678" duration="1394000" />
+      <workItem from="1619856882449" duration="697000" />
+      <workItem from="1619858701604" duration="749000" />
+      <workItem from="1619860924903" duration="1194000" />
+      <workItem from="1619862746957" duration="1359000" />
+      <workItem from="1619864996209" duration="835000" />
+      <workItem from="1619866926598" duration="1433000" />
+      <workItem from="1619868753623" duration="1111000" />
+      <workItem from="1619870727715" duration="593000" />
+      <workItem from="1619872588840" duration="1309000" />
+      <workItem from="1619874421743" duration="596000" />
+      <workItem from="1620021942270" duration="1749000" />
+      <workItem from="1620023805219" duration="1194000" />
+      <workItem from="1620025658200" duration="587000" />
+      <workItem from="1620027489965" duration="660000" />
+      <workItem from="1620029311866" duration="1056000" />
+      <workItem from="1620031181416" duration="1130000" />
+      <workItem from="1620033011586" duration="1110000" />
+      <workItem from="1620034845066" duration="1229000" />
+      <workItem from="1620036669011" duration="689000" />
+      <workItem from="1620038496660" duration="689000" />
+      <workItem from="1620040324049" duration="1198000" />
+      <workItem from="1620045983477" duration="1106000" />
+      <workItem from="1620047933589" duration="225000" />
+      <workItem from="1620208571433" duration="1530000" />
+      <workItem from="1620210230856" duration="1649000" />
+      <workItem from="1620212063432" duration="63000" />
+      <workItem from="1620293093315" duration="722000" />
+      <workItem from="1620381342799" duration="46000" />
+      <workItem from="1620381540504" duration="1927000" />
+      <workItem from="1620384360128" duration="1595000" />
+      <workItem from="1620386230876" duration="589000" />
+      <workItem from="1620389053292" duration="1382000" />
+      <workItem from="1620390508471" duration="785000" />
+      <workItem from="1620629460656" duration="1709000" />
+      <workItem from="1620632494406" duration="1731000" />
+      <workItem from="1620634304041" duration="1744000" />
+      <workItem from="1620636123335" duration="611000" />
+      <workItem from="1620639346076" duration="1180000" />
+      <workItem from="1620641345940" duration="587000" />
+      <workItem from="1620643175294" duration="579000" />
+      <workItem from="1620645002689" duration="587000" />
+      <workItem from="1620708736459" duration="590000" />
+      <workItem from="1620715922527" duration="659000" />
+      <workItem from="1620717797722" duration="569000" />
+      <workItem from="1620801607110" duration="769000" />
+      <workItem from="1620802896792" duration="1740000" />
+      <workItem from="1620804737558" duration="1735000" />
+      <workItem from="1620806545843" duration="1744000" />
+      <workItem from="1620808376194" duration="1739000" />
+      <workItem from="1620810211405" duration="1731000" />
+      <workItem from="1620812029082" duration="1631000" />
+      <workItem from="1620813843713" duration="1744000" />
+      <workItem from="1620815697293" duration="1733000" />
+      <workItem from="1620817507146" duration="1888000" />
+      <workItem from="1620884707831" duration="2126000" />
+      <workItem from="1620888075648" duration="585000" />
+      <workItem from="1620897637596" duration="1731000" />
+      <workItem from="1620899450816" duration="993000" />
+      <workItem from="1620901280468" duration="1726000" />
+      <workItem from="1620903110206" duration="1864000" />
+      <workItem from="1620905139329" duration="1193000" />
+      <workItem from="1620908509064" duration="1656000" />
+      <workItem from="1620911163647" duration="1630000" />
+      <workItem from="1620980856407" duration="1749000" />
+      <workItem from="1620982685092" duration="981000" />
+      <workItem from="1620995695724" duration="1688000" />
+      <workItem from="1620997460780" duration="1748000" />
+      <workItem from="1620999282370" duration="2021000" />
+      <workItem from="1621063017431" duration="1635000" />
+      <workItem from="1621064841776" duration="1750000" />
+      <workItem from="1621066840419" duration="823000" />
+      <workItem from="1621068657048" duration="1882000" />
+      <workItem from="1621070616015" duration="1448000" />
+      <workItem from="1621072395937" duration="111000" />
+      <workItem from="1621072566706" duration="1748000" />
+      <workItem from="1621074381282" duration="1696000" />
+      <workItem from="1621081739742" duration="1740000" />
+      <workItem from="1621083556600" duration="1731000" />
+      <workItem from="1621131555547" duration="1015000" />
+      <workItem from="1621152606514" duration="954000" />
+      <workItem from="1621154556070" duration="1735000" />
+      <workItem from="1621156387904" duration="1772000" />
+      <workItem from="1621158248236" duration="819000" />
+      <workItem from="1621161080713" duration="497000" />
+      <workItem from="1621245456158" duration="1707000" />
+      <workItem from="1621247241934" duration="1742000" />
+      <workItem from="1621249068139" duration="1740000" />
+      <workItem from="1621250885309" duration="1707000" />
+      <workItem from="1621253949224" duration="2078000" />
+      <workItem from="1621256109222" duration="740000" />
+      <workItem from="1621321016329" duration="1389000" />
+      <workItem from="1621323300065" duration="1133000" />
+      <workItem from="1621325947014" duration="1741000" />
+      <workItem from="1621327775507" duration="1538000" />
+      <workItem from="1621332978782" duration="1197000" />
+      <workItem from="1621334797762" duration="1132000" />
+      <workItem from="1621339870806" duration="1922000" />
+      <workItem from="1621341898338" duration="1748000" />
     </task>
     <servers />
   </component>
@@ -560,25 +759,21 @@
     <option name="version" value="3" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="413" y="110" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1608966043519">
+    <state x="463" y="118" key="FileChooserDialogImpl" timestamp="1621072082556">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="413" y="110" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.728@0.0.1366.728" timestamp="1608966043519" />
-    <state x="463" y="118" key="FileChooserDialogImpl" timestamp="1614849164201">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state x="463" y="118" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1614849164201" />
+    <state x="463" y="118" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1621072082556" />
     <state width="196" height="457" key="HiddenNamespacesPopup" timestamp="1616154541574">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="196" height="457" key="HiddenNamespacesPopup/0.0.1366.728@0.0.1366.728" timestamp="1616154541574" />
-    <state x="389" y="74" width="650" height="654" key="find.popup" timestamp="1615972178709">
+    <state x="389" y="74" width="650" height="654" key="find.popup" timestamp="1621326724274">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="389" y="74" width="650" height="654" key="find.popup/0.0.1366.728@0.0.1366.728" timestamp="1615972178709" />
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1613802798088">
+    <state x="389" y="74" width="650" height="654" key="find.popup/0.0.1366.728@0.0.1366.728" timestamp="1621326724274" />
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1621247968699">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1613802798088" />
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1621247968699" />
   </component>
 </project>

@@ -10,7 +10,6 @@ from django.shortcuts import redirect
 from cart.models import Order
 from cart.utils import cartData
 from .filters import OrderFilter
-from .forms import ReviewForm
 from .models import *
 from django.utils import timezone
 from django.conf import settings
@@ -71,32 +70,10 @@ def detail(request, category_slug, slug):
         return redirect('detail', category_slug=category_slug, slug=product.parent.slug)
 
 
-    if request.method == "POST":
-        form = ReviewForm(request.POST)
-        if form.is_valid():
-            review = form.save(commit=False)
-            review.product = product
-            review.user = request.user
-            review.save()
-            messages.success(request, "Review saved")
-        else:
-            messages.error(request, "Invalid form")
-    else:
-        form = ReviewForm()
-
-
-    #if request.method == 'POST' and request.user.is_authenticated:
-     #   rating = request.POST.get('rating')
-      #  comment = request.POST.get('comment')
-
-       # review = Review.objects.create(product=product, user=request.user, rating=rating, comment=comment)
-        #return redirect('detail')
-
     context = {
         'product': product,
         'related_products': related_products,
         'recently_viewed_products': recently_viewed_products,
-        'form': form
     }
     return render(request, 'store/Item_detail.html', context)
 

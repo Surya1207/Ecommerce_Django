@@ -40,77 +40,7 @@
                   </ul>
                 </div>
               </div>
-              <div class="card sidebar-menu mb-4">
-                <div class="card-header">
-                  <h3 class="h4 card-title">Brands <a href="#" class="btn btn-sm btn-danger pull-right"><i class="fa fa-times-circle"></i> Clear</a></h3>
-                </div>
-                <div class="card-body">
-                  <form>
-                    <div class="form-group">
-                      <div class="checkbox">
-                        <label>
-                          <input type="checkbox"> Armani  (10)
-                        </label>
-                      </div>
-                      <div class="checkbox">
-                        <label>
-                          <input type="checkbox"> Versace  (12)
-                        </label>
-                      </div>
-                      <div class="checkbox">
-                        <label>
-                          <input type="checkbox"> Carlo Bruni  (15)
-                        </label>
-                      </div>
-                      <div class="checkbox">
-                        <label>
-                          <input type="checkbox"> Jack Honey  (14)
-                        </label>
-                      </div>
-                    </div>
-                    <button class="btn btn-default btn-sm btn-primary"><i class="fa fa-pencil"></i> Apply</button>
-                  </form>
-                </div>
-              </div>
-              <div class="card sidebar-menu mb-4">
-                <div class="card-header">
-                  <h3 class="h4 card-title">Colours <a href="#" class="btn btn-sm btn-danger pull-right"><i class="fa fa-times-circle"></i> Clear</a></h3>
-                </div>
-                <div class="card-body">
-                  <form>
-                    <div class="form-group">
-                      <div class="checkbox">
-                        <label>
-                          <input type="checkbox"><span class="colour white"></span> White (14)
-                        </label>
-                      </div>
-                      <div class="checkbox">
-                        <label>
-                          <input type="checkbox"><span class="colour blue"></span> Blue (10)
-                        </label>
-                      </div>
-                      <div class="checkbox">
-                        <label>
-                          <input type="checkbox"><span class="colour green"></span>  Green (20)
-                        </label>
-                      </div>
-                      <div class="checkbox">
-                        <label>
-                          <input type="checkbox"><span class="colour yellow"></span>  Yellow (13)
-                        </label>
-                      </div>
-                      <div class="checkbox">
-                        <label>
-                          <input type="checkbox"><span class="colour red"></span>  Red (10)
-                        </label>
-                      </div>
-                    </div>
-                    <button class="btn btn-default btn-sm btn-primary"><i class="fa fa-pencil"></i> Apply</button>
-                  </form>
-                </div>
-              </div>
               <!-- *** MENUS AND FILTERS END ***-->
-              <div class="banner"><a href="#"><img src="{{ product.imageURL }}" alt="sales 2014" class="img-fluid"></a></div>
             </div>
             <div class="col-lg-9 order-1 order-lg-2">
               <div id="productMain" class="row">
@@ -121,23 +51,6 @@
                     <div class="item"> <img src="{{ product.imageURL }}" alt="" class="img-fluid"></div>
                   </div>
                     <br>
-                    <div style="text-align:left">
-                        {% for pro in products %}
-                        <h4>Available colors:</h4>
-                           <a href=""><span class="{{ product.color }}" style="background-color: #0f6674"></span></a>
-                           <span class="{{ product.color }}"></span>
-                           <span class="{{ product.color }}"></span>
-                           <span class="{{ product.color }}"></span>
-                        {% endfor %}
-                    </div>
-
-                    <div style="text-align:left">
-                        <h4>Available size:</h4>
-  <a href=""><span class="dot"></span></a>
-  <span class="dot"></span>
-  <span class="dot"></span>
-  <span class="dot"></span>
-</div>
 
                 </div>
                 <div class="col-md-6">
@@ -188,11 +101,6 @@
                 </div>
               </div>
               <div class="row same-height-row">
-                <div class="col-md-3 col-sm-6">
-                  <div class="box same-height">
-                    <h3>You may also like these products</h3>
-                  </div>
-                </div>
               {% for related_product in related_products %}
                 <div class="col-md-3 col-sm-6">
 
@@ -255,71 +163,6 @@
     </div>
 
 <div class="container-fluid card px-1 py-5 mx-auto">
-    <div class="row justify-content-center">
-        <div class="col-xl-7 col-lg-8 col-md-10 col-12 text-center mb-5">
-            <div class="card">
-                <div class="row justify-content-left d-flex">
-                    <div class="col-md-4 d-flex flex-column">
-                        <div class="rating-box">
-                            <h1 class="pt-4">4.0</h1>
-                            <p class="">out of 5</p>
-                        </div>
-                        <div> <span class="fa fa-star star-active mx-1"></span> <span class="fa fa-star star-active mx-1"></span> <span class="fa fa-star star-active mx-1"></span> <span class="fa fa-star star-active mx-1"></span> <span class="fa fa-star star-inactive mx-1"></span> </div>
-                    </div>
-                    <div class="col-md-8">
-                        <div class="rating-bar0 justify-content-center">
-                            <table class="text-left mx-auto">
-                                <tr>
-                                    <td class="rating-label">Excellent</td>
-                                    <td class="rating-bar">
-                                        <div class="bar-container">
-                                            <div class="bar-5"></div>
-                                        </div>
-                                    </td>
-                                    <td class="text-right">123</td>
-                                </tr>
-                                <tr>
-                                    <td class="rating-label">Good</td>
-                                    <td class="rating-bar">
-                                        <div class="bar-container">
-                                            <div class="bar-4"></div>
-                                        </div>
-                                    </td>
-                                    <td class="text-right">23</td>
-                                </tr>
-                                <tr>
-                                    <td class="rating-label">Average</td>
-                                    <td class="rating-bar">
-                                        <div class="bar-container">
-                                            <div class="bar-3"></div>
-                                        </div>
-                                    </td>
-                                    <td class="text-right">10</td>
-                                </tr>
-                                <tr>
-                                    <td class="rating-label">Poor</td>
-                                    <td class="rating-bar">
-                                        <div class="bar-container">
-                                            <div class="bar-2"></div>
-                                        </div>
-                                    </td>
-                                    <td class="text-right">3</td>
-                                </tr>
-                                <tr>
-                                    <td class="rating-label">Terrible</td>
-                                    <td class="rating-bar">
-                                        <div class="bar-container">
-                                            <div class="bar-1"></div>
-                                        </div>
-                                    </td>
-                                    <td class="text-right">0</td>
-                                </tr>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
             <div class="card">
             {% for item in product.review_set.all %}
                 <div class="row d-flex">
@@ -351,8 +194,7 @@
             </div>
 
         </div>
-    </div>
-</div>
+
 
 
     <div class="card">
@@ -395,9 +237,4 @@
         </div>
     </div>
     </div>
-
-
-
-
-
 {% endblock content %}

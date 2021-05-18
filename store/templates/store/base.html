@@ -55,7 +55,7 @@
 		    for(var i = 0; i < cookieArr.length; i++) {
 		        var cookiePair = cookieArr[i].split("=");
 
-		        if(name == cookiePair[0].trim()) {
+		        if(name === cookiePair[0].trim()) {
 		            // Decode the cookie value and return
 		            return decodeURIComponent(cookiePair[1]);
 		        }
@@ -66,7 +66,7 @@
 		}
 		var cart = JSON.parse(getCookie('cart'))
 
-		if (cart == undefined){
+		if (cart === undefined){
 			cart = {}
 			console.log('Cart Created!', cart)
 			document.cookie ='cart=' + JSON.stringify(cart) + ";domain=;path=/"
@@ -89,41 +89,15 @@
             <div class="col-lg-6 offer mb-3 mb-lg-0"><a href="#" class="btn btn-success btn-sm">Offer of the day</a><a href="#" class="ml-1">Get flat 35% off on orders over $50!</a></div>
             <div class="col-lg-6 text-center text-lg-right">
               <ul class="menu list-inline mb-0">
-                <li class="list-inline-item"><a href="{% url 'login-page' %}">Login</a></li>
-                <li class="list-inline-item"><a href="{% url 'RegisterPage' %}">Register</a></li>
-                <li class="list-inline-item"><a href="contact.html">Contact</a></li>
-                <li class="list-inline-item"><a href="{% url 'wishlisting' %}">Your Wishlists</a></li>
+                <li class="list-inline-item"><a href="{% url 'account:login' %}">Login</a></li>
+                <li class="list-inline-item"><a href="{% url 'account:register' %}">Register</a></li>
+                <li class="list-inline-item"><a href="{% url 'account:logout' %}">Logout</a></li>
+                <li class="list-inline-item"><a href="{% url 'account:wishlist' %}">Your Wishlists</a></li>
               </ul>
             </div>
           </div>
         </div>
-        <div id="login-modal" tabindex="-1" role="dialog" aria-labelledby="Login" aria-hidden="true" class="modal fade">
-          <div class="modal-dialog modal-sm">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title">Customer login</h5>
-                <button type="button" data-dismiss="modal" aria-label="Close" class="close"><span aria-hidden="true">×</span></button>
-              </div>
-              <div class="modal-body">
-                <form action="customer-orders.html" method="post">
-                  <div class="form-group">
-                    <input id="email-modal" type="text" placeholder="email" class="form-control">
-                  </div>
-                  <div class="form-group">
-                    <input id="password-modal" type="password" placeholder="password" class="form-control">
-                  </div>
-                  <p class="text-center">
-                    <button class="btn btn-primary"><i class="fa fa-sign-in"></i> Log in</button>
-                  </p>
-                </form>
-                <p class="text-center text-muted">Not registered yet?</p>
-                <p class="text-center text-muted"><a href="register.html"><strong>Register now</strong></a>! It is easy and done in 1 minute and gives you access to special discounts and much more!</p>
-              </div>
-            </div>
-          </div>
-        </div>
         <!-- *** TOP BAR END ***-->
-
 
       </div>
       <nav class="navbar navbar-expand-lg">
@@ -294,10 +268,10 @@
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script>window.jQuery || document.write('<script src="assets/js/vendor/jquery.min.js"><\/script>')</script>
-    <script src="js/bootstrap.min.js"></script>
+    <script>window.jQuery || document.write('<script src="{% static "assets/js/vendor/jquery.min.js" %}"><\/script>')</script>
+    <script src="{% static "js/bootstrap.min.js" %}"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="js/ie10-viewport-bug-workaround.js"></script>
+    <script src="{% static "js/ie10-viewport-bug-workaround.js" %}"></script>
 
 
     <!-- *** COPYRIGHT END ***-->
@@ -308,6 +282,7 @@
     <script src="{% static 'vendor/owl.carousel/owl.carousel.min.js' %}"> </script>
     <script src="{% static 'vendor/owl.carousel2.thumbs/owl.carousel2.thumbs.js' %}"></script>
     <script src="{% static 'js/front.js' %}"></script>
+    <script src="{% static 'js/index.js' %}"></script>
     <script src="{% static 'js/cart.js' %}"></script>
   </body>
 </html>

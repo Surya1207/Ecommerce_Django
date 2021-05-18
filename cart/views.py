@@ -18,9 +18,9 @@ from django.http import JsonResponse, HttpResponse
 import json
 import datetime
 
-from store.models import Review
+from .paypal import PayPalClient
 from store.views import *
-from accounts.views import *
+from account.views import *
 from .forms import CouponApplyForm
 from .models import *
 from .utils import cookieCart, cartData, guestOrder
@@ -63,7 +63,7 @@ def updateItem(request):
     print('Action:', action)
     print('Product:', productId)
 
-    customer = request.user.customer
+    customer = request.user.id
     product = Product.objects.get(id=productId)
     order, created = Order.objects.get_or_create(customer=customer, complete=False)
 
@@ -87,7 +87,7 @@ def processOrder(request):
     data = json.loads(request.body)
 
     if request.user.is_authenticated:
-        customer = request.user.customer
+        customer = request.user.id
         order, created = Order.objects.get_or_create(customer=customer, complete=False)
     else:
         customer, order = guestOrder(request, data)
@@ -209,3 +209,4 @@ def coupon_apply(request):
         except Coupon.DoesNotExist:
             request.user = None
     return redirect('cart')
+

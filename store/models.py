@@ -4,6 +4,7 @@ from django.contrib.auth.models import User
 
 
 # Create your models here.
+from django.conf import settings
 
 
 class Category(models.Model):
@@ -42,7 +43,7 @@ class Product(models.Model):
     num_available = models.IntegerField(default=1)
     num_visits = models.IntegerField(default=0)
     last_visit = models.DateTimeField(blank=True, null=True)
-    wished_item = models.ManyToManyField(User, related_name='favourite',
+    wished_item = models.ManyToManyField(settings.AUTH_USER_MODEL, related_name='favourite',
                   default=None, blank=True)
 
     def __str__(self):
@@ -55,21 +56,3 @@ class Product(models.Model):
         except:
             url = ''
         return url
-
-
-class Review(models.Model):
-    user = models.ForeignKey(User, default=True, on_delete=models.CASCADE)
-    product = models.ForeignKey(Product, on_delete=models.CASCADE, default=True)
-    comment = models.TextField(max_length=250, blank=True)
-    created_at = models.DateTimeField(auto_now_add=True, null=True)
-    updated_at = models.DateTimeField(auto_now=True, null=True)
-    rating = models.IntegerField(default=10, validators=[MaxValueValidator(10), MinValueValidator(1)])
-    active = models.BooleanField(default=True)
-
-
-    class Meta:
-        ordering = ['-created_at']
-
-
-    def __str__(self):
-        return self.comment
